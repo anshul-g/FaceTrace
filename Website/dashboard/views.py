@@ -7,8 +7,8 @@ import boto3
 # Create your views here.
 @login_required(login_url='/')
 def dashboard(request): 
-    s3 = boto3.resource('s3',aws_access_key_id="AKIASMSBDZXUPALNUHGN",
-         aws_secret_access_key= "lJ8m69u+TDZRbBj28ROWxWF60Heu4CWAfVDXvT7f",config=Config(signature_version='s3v4'), region_name='ap-south-1')
+    s3 = boto3.resource('s3',aws_access_key_id="xxxxx",
+         aws_secret_access_key= "xxxxx",config=Config(signature_version='s3v4'), region_name='ap-south-1')
 
     client = boto3.client('s3',aws_access_key_id="AKIASMSBDZXUPALNUHGN",
         aws_secret_access_key= "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",config=Config(signature_version='s3v4'), region_name='ap-south-1')
