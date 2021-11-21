@@ -1,0 +1,66 @@
+body{
+    margin: 0;    
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar{
+    display:flex;
+    background: #5D5FEF;
+    justify-content: space-between;
+    padding: 16px 64px
+}
+
+.logo{
+    height: 40px;
+}
+
+.settings-icon{
+    height: 40px;
+}
+
+.content{
+    display: flex;
+    height: 90.3vh;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(165,202,246,0.5);
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.file-section{
+    padding: 16px;
+    width: 85%;
+    flex: 1;
+    background: #fff;
+    border: #fff 4px solid;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow-y: scroll;
+}
+
+.filebar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 16px;
+    background: rgba(165,202,246,0.5);
+    padding: 16px 8px 16px 8px;
+    border-radius: 5px;
+}
+
+.file{
+    margin: 0 0 0 8px;
+}
+
+button{
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 8px;
+    background: #5D5FEF;
+    border: 0;
+    color: #fff;
+}

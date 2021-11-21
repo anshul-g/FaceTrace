@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\style.css">
+    <title>FaceTrace-Login</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <img class = "logo" src = "../static/images/Logo_Black_Cropped.png" alt = "Logo">
+            <div class="login-card">
+                <div class="header">
+                    <h2 class="animation a1">WELCOME!</h2>
+                    <h4 class="animation a2">Log in to your account using username and password</h4>
+                </div>
+                <form class = "form" method="post" action=".">
+                    {% csrf_token %}
+                    <input class="form-field animation a3" placeholder="Username" name='username'>
+                    <input type="password" class="form-field animation a4" placeholder="Password" name='password'> 
+                    <button type="submit" class="animation a6">LOGIN</button>
+                    <p class="animation a5"><a href="reset/">Forgot Password</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="right"></div>
+      </div>
+      
+
+</body>
+</html>

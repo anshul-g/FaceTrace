@@ -5,3 +5,5 @@ xlrd
 opencv-python
 xlsxwriter
 openpyxl
+datetime
+boto3

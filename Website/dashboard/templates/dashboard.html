@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceTrace</title>
+    <link rel="Stylesheet" href="../static/css/dashboard.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="nav-bar">
+            <img src="../static/images/Logo_White_Cropped.png" alt="logo" class="logo">
+            <a href="/account">
+                <img src="../static/images/settings.png" alt="settings" class="settings-icon">
+            </a>
+        </div>
+        <div class="content">
+            <h1>ATTENDANCE RECORDS</h1>
+            <div class="file-section">
+                {% for name in filename %}
+                {% load index %}
+                <div class = "filebar">
+                    <p class="file">{{ name|slice:-4 }}</p>
+                    <a href = {{ fileurl|index:forloop.counter0 }} >
+                        <button>Download</button>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

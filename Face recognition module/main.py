@@ -1,4 +1,5 @@
 import face_recognition
+import datetime
 import cv2
 import numpy as np
 import os
@@ -8,7 +9,7 @@ from utils_csv import append_df_to_csv
 
 video_capture = cv2.VideoCapture(0)
 
-# Initialize some lists
+# Initializing lists
 known_face_encodings = []
 known_face_roll_no = []
 face_locations = []
@@ -23,7 +24,7 @@ name_col = []
 roll_no_col = []
 time_col = []
 
-df = pd.read_excel("student_db" + os.sep + "people_db.xlsx")
+df = pd.read_excel("database" + os.sep + "people_db.xlsx")
 
 for key, row in df.iterrows():
 
@@ -32,7 +33,7 @@ for key, row in df.iterrows():
     image_path = row['image']
     roll_record[roll_no] = name
 
-    student_image = face_recognition.load_image_file("student_db" + os.sep + image_path)
+    student_image = face_recognition.load_image_file("database" + os.sep + image_path)
     student_face_encoding = face_recognition.face_encodings(student_image)[0]
 
     known_face_encodings.append(student_face_encoding)
@@ -98,13 +99,19 @@ while True:
 # Storing data in attendance file
 data = {'Name': name_col, 'Roll No.': roll_no_col, 'Time': time_col}
 
+now = datetime.datetime.now()
+dt_string = now.strftime("%d-%m-%Y %H_%M")
+
+today = datetime.date.today()
+d1 = today.strftime("%d/%m/%Y")
 curr_time = time.localtime()
 curr_clock = time.strftime("%c", curr_time)
-date_info = curr_clock.replace(" ","_")
-log_file_name = "attendance_record.csv"
+date_info = curr_clock.replace(":","_")
+log_file_name = "Attendance record " + str(dt_string) + ".csv"
 
 # Adding data to csv file
 append_df_to_csv(log_file_name, data)
 
 video_capture.release()
 cv2.destroyAllWindows()
+

@@ -1,6 +1,7 @@
 import pandas as pd
 import csv
 
+# function to write csv file using data from dataframe
 def append_df_to_csv(filename, df):
 
     df = pd.DataFrame(df)    

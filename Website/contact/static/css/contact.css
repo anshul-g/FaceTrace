@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: rgba(165,202,246,0.5);
+}
+
+div{
+    margin-top: 40vh;
+    display:flex;
+    flex-direction:column;
+    padding: 32px;
+    align-items: center;
+    background: rgba(255,255,255,0.75);
+    border-radius: 10px;
+}
+
+p{
+    margin: 2px;
+}
